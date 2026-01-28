@@ -1,14 +1,13 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import { Playlist } from "./types";
-import Link from "next/link";
+import { PlaylistDataType } from "./types";
+import Playlist from "@/components/Playlist/Playlist";
 
 export default async function Home() {
   const res = await fetch("http://localhost:3000/api/playlists", {
     cache: "no-store",
   });
 
-  const playlists: Playlist[] = await res.json();
+  const playlists: PlaylistDataType[] = await res.json();
 
   return (
     <div className={styles.page}>
@@ -16,7 +15,7 @@ export default async function Home() {
         <ul>
           {playlists.map((playlist) => (
             <li key={playlist.id}>
-              <Link href={`/playlists/${playlist.id}`}>{playlist.title}</Link>
+              <Playlist data={playlist} />
             </li>
           ))}
         </ul>

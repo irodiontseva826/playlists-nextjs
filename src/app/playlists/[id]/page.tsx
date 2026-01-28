@@ -1,5 +1,7 @@
-import { Playlist } from "@/app/types";
+import { PlaylistDataType } from "@/app/types";
 import styles from "../../page.module.css";
+import Track from "@/components/Track/Track";
+import Image from "next/image";
 
 type PageProps = {
   params: {
@@ -17,15 +19,23 @@ export default async function Page(props: PageProps) {
     return <h1>Плейлист не найден</h1>;
   }
 
-  const playlist: Playlist = await res.json();
+  const playlist: PlaylistDataType = await res.json();
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Image
+          src={`${playlist.cover}`}
+          alt={`Обложка плейлиста "${playlist.title}"`}
+          width={100}
+          height={100}
+        />
         <h1>{playlist.title}</h1>
         <ul>
           {playlist.tracks.map((track) => (
-            <li key={track.id}>{track.title}</li>
+            <li key={track.id}>
+              <Track data={track} />
+            </li>
           ))}
         </ul>
       </main>

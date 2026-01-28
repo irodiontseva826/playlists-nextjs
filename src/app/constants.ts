@@ -3,7 +3,7 @@ export const PLAYLISTS = [
     id: "1",
     title: "Chill Vibes",
     trackCount: 12,
-    cover: "/chill.jpg",
+    cover: "/images/chill.jpg",
     tracks: [
       {
         id: "1",
@@ -48,7 +48,7 @@ export const PLAYLISTS = [
     id: "2",
     title: "Workout Energy",
     trackCount: 10,
-    cover: "/workout.jpg",
+    cover: "/images/workout.jpg",
     tracks: [
       { id: "1", title: "Stronger", artist: "Kanye West", duration: "5:12" },
       { id: "2", title: "Power", artist: "Kanye West", duration: "4:52" },

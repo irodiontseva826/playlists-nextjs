@@ -1,14 +1,14 @@
-interface Track {
+export interface TrackDataType {
   id: string;
   title: string;
   artist: string;
   duration: string;
 }
 
-export interface Playlist {
+export interface PlaylistDataType {
   id: string;
   title: string;
   trackCount: number;
   cover: string;
-  tracks: Track[];
+  tracks: TrackDataType[];
 }
