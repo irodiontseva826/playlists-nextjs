@@ -10,16 +10,15 @@ export default async function Home() {
   const playlists: PlaylistDataType[] = await res.json();
 
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <ul>
-          {playlists.map((playlist) => (
-            <li key={playlist.id}>
-              <Playlist data={playlist} />
-            </li>
-          ))}
-        </ul>
-      </main>
-    </div>
+    <>
+      <h1>Мои плейлисты</h1>
+      <ul className={styles.playlists}>
+        {playlists.map((playlist) => (
+          <li key={playlist.id}>
+            <Playlist data={playlist} />
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

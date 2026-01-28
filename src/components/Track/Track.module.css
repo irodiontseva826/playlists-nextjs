@@ -1,0 +1,14 @@
+.track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.track:hover {
+  background-color: rgb(255 255 255 / 10%);
+  transition: background-color 0.3s;
+}

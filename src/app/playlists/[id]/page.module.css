@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cover {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+}

@@ -1,6 +1,7 @@
 import { PlaylistDataType } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./Playlist.module.css";
 
 const Playlist = ({
   data: { id, title, trackCount, cover },
@@ -8,8 +9,9 @@ const Playlist = ({
   data: PlaylistDataType;
 }) => (
   <Link href={`/playlists/${id}`}>
-    <article>
+    <article className={styles.article}>
       <Image
+        className={styles.cover}
         src={`${cover}`}
         alt={`Обложка плейлиста "${title}"`}
         width={100}

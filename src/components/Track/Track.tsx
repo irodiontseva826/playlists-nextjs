@@ -1,5 +1,6 @@
 import { TrackDataType } from "@/app/types";
 import { formatDuration } from "@/utils/formatDuration";
+import styles from "./Track.module.css";
 
 const Track = ({
   data: { title, artist, duration },
@@ -8,7 +9,7 @@ const Track = ({
 }) => {
   const { display, dateTime } = formatDuration(duration);
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div className={styles.track}>
       <div>
         <h2>{title}</h2>
         <span>{artist}</span>
